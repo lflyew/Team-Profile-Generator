@@ -1,39 +1,33 @@
 const employee = require('../lib/employee');
 
-//employee object created
+describe('employee', () => {
+    const testEmployee = new employee('Hailey', 123, 'hailey@gmail.com')
+describe('constructor test', () => {
+    test('new employee object created', () => {
+        expect(testEmployee).toBeInstanceOf(employee);
 
-test ('creates an employee object', () => {
-    const employee = new employee('Hailey', 123, 'hailey@gmail.com');
-    expect(employee.name).toEqual(expect.any(String));
-    expect(employee.id).toEqual(expect.any(Number)); 
-    expect(employee.email).toEqual(expect.any(String)); 
-
-
+    });
+    test('new employee class with name, id, and email', () => {
+        expect(testEmployee).toEqual({
+            name: 'Hailey',
+            id: 123,
+            email: "hailey@gmail.com",
+        });
+    
 });
-
-//retrieve name from getname
-
-test('gets employee name', () => {
-    const employee = new employee('Hailey', 123, 'hailey@gmail.com');
-    expect(employee.getname()).toEqual(expect.any(String));
-
 });
+describe('id, name, email test', () => {
+   
+    test('should return name', () => {
+        expect(testEmployee.getname()).toEqual('Hailey');
 
-//gets id from getID
-test('gets employee id', () => {
-    const employee = new employee('Hailey', 123, 'hailey@gmail.com');
-    expect(employee.getid()).toEqual(expect.any(Number));
+    });
+    test('should return id', () => {
+        expect(testEmployee.getid()).toEqual(123);
 
+    });
+    test('should return email', () => {
+        expect(testEmployee.getemail()).toEqual('hailey@gmail.com');
+    });
 });
-//gets email from getemail
-test('gets employee email', () => {
-    const employee = new employee('Hailey', 123, 'hailey@gmail.com');
-    expect(employee.getemail()).toEqual(expect.stringContaining(employee.email.toString()));
-
-});
-//gets role from getrole
-test('gets employee role', () => {
-    const employee = new employee('Hailey', 123, 'hailey@gmail.com');
-    expect(employee.getrole()).toEqual("employee");
-
 });
