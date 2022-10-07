@@ -19,5 +19,10 @@
   "homepage": "https://github.com/lflyew/Team-Profile-Generator#readme",
   "dependencies": {
     "inquirer": "^9.1.2"
+  },
+  "devDependencies": {
+    "@types/node": "^18.8.3",
+    "tslib": "^2.4.0",
+    "typescript": "^4.8.4"
   }
 }
