@@ -2,8 +2,8 @@
 
 
   ## Description
-
-  A step by step user input through node to generate a well organized, professional and detailed README file.
+  
+  A step by step command line application in Node.js that takes in information about employees on a project team and generates an HTML webpage that displays summaries for each person.
 
   ## Table of Contents
   - [Description](#description)
@@ -51,7 +51,7 @@
 
   ## Video
 
- 
+ https://drive.google.com/file/d/1E17yaWMQOW-JYdCbSOw0aa1BjJIZWgvE/view?usp=share_link
 
 
 
