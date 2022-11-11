@@ -1,54 +1,41 @@
-const manager = require('../lib/manager');
+const manager = require("../lib/manager.js");
 
 describe('manager', () => {
-    const testManager = new manager('Hailey', 123, 'hailey@gmail.com', 227)
+    const testmanager = new manager('Hailey', 123, 'hailey@gmail.com', 227)
     describe('tests constructor', () => {
         test('should create new manager', () => {
-            expect(testManager).toBeInstanceOf(manager);
+            expect(testmanager).toBeInstanceOf(manager);
         });
-        test('should create new manager with name, id, email, officenum', () => {
-            expect(testManager).toEqual({
+        test('should create new manager with name, id, email, office number', () => {
+            expect(testmanager).toEqual({
                 name: 'Hailey',
                 id: 123,
                 email: 'hailey@gmail.com',
-                officeNum: 227,
+                OfficeNum: 227,
             });
         });
     });
-    describe('get tests', () => {
+    describe("get tests", () => {
         test('should return name when called', () => {
-            expect(testManager.getName()).toEqual('Hailey');
+            expect(testmanager.getname()).toEqual('Hailey');
 
         });
         test('should return id when called', () => {
-            expect(testManager.getid()).toEqual(123);
+            expect(testmanager.getid()).toEqual(123);
 
         });
 
         test('should return email when called', () => {
-            expect(testManager.getemail()).toEqual('hailey@gmail.com');
+            expect(testmanager.getemail()).toEqual('hailey@gmail.com');
 
         });
         test('should return office number when called', () => {
-            expect(testManager.getofficNum()).toEqual(227);
+            expect(testmanager.getOfficeNum()).toEqual(227);
 
         });
         test('should return role when called', () => {
-            expect(testManager.getrole()).toEqual('manager');
+            expect(testmanager.getrole()).toEqual('manager');
 
         });
     });
 });
-
-// test ('creates manager object', () => {
-//     const manager = new manager('Hailey', 123, 'hailey@gmail.com', 7);
-
-//     expect(manager.officeNum).toEqual(expect.any(Number));
-
-// });
-
-// test('gets role of employee', () => {
-//     const manager = new manager('Hailey', 123, 'hailey@gmail.com');
-
-//     expect(manager.getrole()).toEqual("manager");
-// });

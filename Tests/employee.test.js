@@ -1,4 +1,4 @@
-const employee = require('../lib/employee');
+const employee = require("../lib/employee.js");
 
 describe('employee', () => {
     const testEmployee = new employee('Hailey', 123, 'hailey@gmail.com')
@@ -18,7 +18,7 @@ describe('constructor test', () => {
 });
 describe('id, name, email test', () => {
    
-    test('should return name', () => {
+    test("should return name", () => {
         expect(testEmployee.getname()).toEqual('Hailey');
 
     });

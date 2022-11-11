@@ -1,12 +1,13 @@
+const inquirer = require("inquirer");
 
-const inquirer = require('inquirer');
 
 const fs = require('fs');
 
+
 //profiles
-const manager = require('./lib/manager');
-const engineer = require('./lib/engineer');
-const intern = require('./lib/intern');
+const manager = require('./lib/manager.js');
+const engineer = require('./lib/engineer.js');
+const intern = require('./lib/intern.js');
 
 const team = [];
 
@@ -41,7 +42,7 @@ const initiate = async () => {
             isteamComplete = true;
             console.log(team)
             generateCards(team)
-            fs.writeFile('./dist/index.html', generateHTML(teamCards), (error) =>
+            fs.writeFile('./dist/index.html', generateHTML(empCards), (error) =>
             error ? console.error(error) : console.log('HTML file created successfully!'))
 
         } else {
@@ -87,11 +88,11 @@ const createmanager = async () => {
     await inquirer
     .prompt(manQuestions)
     .then((data) => {
-        employees.push(new manager(data.name, data.id, data.email, data.officeNum))
+        employees.push(new manager(data.name, data.id, data.email, data.OfficeNum))
     });
 };
 
-const NewEngineer = async () => {
+const createengineer = async () => {
     const engQuestions = [
         {
             type: 'input',
@@ -132,7 +133,7 @@ const NewEngineer = async () => {
     });
 };
 
-const NewIntern = async () => {
+const createintern = async () => {
     const intQuestions = [
         {
             type: 'input',

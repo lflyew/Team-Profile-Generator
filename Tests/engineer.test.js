@@ -1,4 +1,4 @@
-const engineer = require('../lib/engineer');
+const engineer = require('../lib/engineer.js');
 
 describe('engineer', () =>{
 const testEngineer = new engineer ('Hailey', 123, 'hailey@gmail.com', 'www.github.com/hailey23')
@@ -21,7 +21,7 @@ describe ("engineer constructor test", () => {
 describe('get tests', () => {
    
     test('should return name', () => {
-        expect(testEngineer.getName()).toEqual("Hailey");
+        expect(testEngineer.getname()).toEqual("Hailey");
 
     });
     test('should return id', () => {

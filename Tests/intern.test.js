@@ -1,4 +1,4 @@
-const intern = require('../lib/intern');
+const intern = require('../lib/intern.js');
 
 describe('intern', () => {
     const testIntern = new intern('Hailey', 123, 'hailey@gmail.com', 'UGA')
@@ -19,7 +19,7 @@ describe('intern', () => {
 
     describe('get tests', () => {
         test('should return name when called', () => {
-            expect(testIntern.getName()).toEqual("Hailey");
+            expect(testIntern.getname()).toEqual("Hailey");
 
         });
         test('should return id when called', () => {
