@@ -81,14 +81,14 @@ const createmanager = async () => {
         {
             type: 'input',
             message: "Please enter manager's office number: ",
-            name: 'officeNum',
+            name: 'OfficeNum',
             validate: validateIn,
         },
     ];
     await inquirer
     .prompt(manQuestions)
     .then((data) => {
-        employees.push(new manager(data.name, data.id, data.email, data.OfficeNum))
+        team.push(new manager(data.name, data.id, data.email, data.OfficeNum))
     });
 };
 
@@ -129,7 +129,7 @@ const createengineer = async () => {
     await inquirer
     .prompt(engQuestions)
     .then((data) => {
-        employees.push(new engineer(data.name, data.id, data.email, data.github))
+        team.push(new engineer(data.name, data.id, data.email, data.github))
     });
 };
 
@@ -168,7 +168,7 @@ const createintern = async () => {
     await inquirer
     .prompt(intQuestions)
     .then((data) => {
-        employees.push(new intern(data.name, data.id, data.email, data.school))
+        team.push(new intern(data.name, data.id, data.email, data.school))
     });
 };
 
@@ -178,15 +178,15 @@ const empCards = []
        switch (element.getrole()) {
         case "manager":
         empCards.push(`<div class="col">
-        <div class="card bg-danger text-dark text-center h-100">
+        <div class="card bg-danger text-dark text-center fw-bold h-100">
         <div class="card-body">
         <h5 class="card-title">${element.name}</h5>
-        <p class="card-text fw-bold">${element.getrole()}</p>
+        <p class="card-text card-subtitle fw-bold">${element.getrole()}</p>
         </div>
         <ul class="list-group list-group-flush card-text text-primary">
         <li class="list-group-item">ID: ${element.id}</li>
         <li class="list-group-item">Email: <a href = "mailto: ${element.email}">${element.email}</a></li>
-        <li class="list-group-item">Phone: ${element.officeNum}</li>
+        <li class="list-group-item">Phone: ${element.OfficeNum}</li>
         </ul>
         </div>
         </div>`)
@@ -241,13 +241,14 @@ function generateHTML(arr) {
     
     <title> Project Team</title>
     </head>
+
     <body>
     <header class="container-fluid jumbotron text-center bg-secondary text-info mb-5 p-3">
     <h1>Project Team <i class="fa-sharp fa-solid fa-people-group"></i></h1>
     </header>
     <section class="container">
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
-    ${arr.join('\r\m')}
+    ${arr.join('\r\n')}
 </div>
 </section>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
